@@ -154,17 +154,22 @@ if __name__ == "__main__":
     csv_file = 'MIPs.csv'
     df = pd.read_csv(csv_file)
 
+    # Step 2: Add the new column with value 'N' for all rows
+    df['Won already'] = 'N'
+
+    # Step 3: Save the updated DataFrame back to a CSV if needed
+    df.to_csv('MIPs.csv', index=False)
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
 
     # Find differential of stats from previous year.
-    df, lowest_games_prev = find_differential_of_stats(df)
-    df.to_csv('MIPs_updated.csv', index=False)
+    #df, lowest_games_prev = find_differential_of_stats(df)
+    #df.to_csv('MIPs_updated.csv', index=False)
 
 
 
-    print("Lowest games prev", lowest_games_prev)
-    print("Season column updated successfully!")
+    #print("Lowest games prev", lowest_games_prev)
+    print("Already Won column updated successfully!")
 
 
 

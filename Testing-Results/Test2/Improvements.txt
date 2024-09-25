@@ -1,0 +1,27 @@
+1. I'm removing the possibility for players to get accounted for that have already won the award.
+2. I'm removing the bottom variables that seem to be the least relevant based off of shap plot and my intuition.
+    - Variables removed
+    * Games
+    * Games Started
+    * Personal Fouls per Game
+    * TRB%/TRB% difference
+    * DBPM
+    * FTr/FTr difference
+    * 2P% PerGame/2P% difference
+    * WS/48
+    * STL PerGame/STL%/STL difference
+    * eFG%/eFG% difference
+    * TRB% difference
+    * FGA PerGame
+    * DRB% difference/DRB%
+    * 3P% difference
+    * PER 
+    * BLK %
+    * TS%/TS% diff
+    * FTA 
+    * FT% diff
+    * FG% /FG% difference
+    * ORB difference
+    * DWS
+    * 
+

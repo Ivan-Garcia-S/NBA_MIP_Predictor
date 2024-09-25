@@ -1,0 +1,7 @@
+1. I noticed that my MIP Share values for the top MIP candidates were a lot lower than the actual values. Also that usually at around the top 12th candidate each season, their share was 0 or close to 0.
+My models were predicting values of around 0.1 around the 12th candidate area, which makes me believe the MIP share was being too evenly distributed among too many players,
+and needs to be more harsh on less likely candidates.
+
+2. I noticed candidates that had already won the award (Paul George in 2012-13) were getting high shares in other years where they made big leaps (2017-18 to 2018-19). Since a player has never won MIP 
+twice before I need to account for that in my data filtering.
+
