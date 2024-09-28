@@ -1,0 +1,6 @@
+1. I noticed that certain years (2006-07) the models were predicting players like Nenê who played very few games the previous year due to injury or other reasons (One game played in 2005-06).
+I need to add criteria for minimum games played the season before bc this happened pretty often.
+
+2. Another thing I noticed is that if a player is made such a leap that they are in MVP contention, (Dwyane Wade in 2008-09, 3rd in MVP votes, jumped about 7 PPG from the previous year, 
+tied for 19th in MIP voting) they are very unlikely to win the award. Shai Gilgeous-Alexander did get 2nd place in MIP and 5th in MVP voting for 2022-23, however.
+    - To prevent "Too good" players from getting predicted, I'm adding a cap for statistics such as PPG and PER.

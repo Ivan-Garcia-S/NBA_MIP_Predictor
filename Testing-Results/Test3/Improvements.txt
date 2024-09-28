@@ -1,0 +1,3 @@
+1. I tried to remove players like Nene who were playing very few games the previous year and should not have been counted towards mip, but somehow a few slipped through.
+
+2. I added a cap of min 45 games played previous year, max of 27.7 PER in season and 27.4 PPG in the season.

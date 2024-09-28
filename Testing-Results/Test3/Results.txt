@@ -1,0 +1,16 @@
+1. I realized I had a major issue with my data filtering. I was filtering the possible players to train the model on, by those who had an mip share of over 0 that year, 
+instead of by the minimum requirements met, OR having an MIP share of over 0. Also, I changed to filter out the ones with MIP share less than 0.04, as those with a lesser
+score than that never had much of a chance to win the award and shouldn't be accounted for in the training.
+
+2. I noticed KD got guessed a lot by the models in 2009-10, even though he got low votes for the actual award. Looks to me because he was already very good as a player
+3. Also, strange case of Channing Frye in same year 2009-10.  He played a lot better than the year before, but actually not much better than his best season in the NBA. This needs 
+to be accounted for in the future. Same with (Zach Randolph - 2010, )
+
+4. Noticed Hakim Warrick got predicted in 2007, but had 0 votes for mip that year!!! He went from 4.1 PPG to 12.7PPG, a pretty large bump
+    - Possibly because he only played 10.6 MPG the year before and bumped to 26.2 MPG, he wasn't watched much the year before.
+
+
+
+
+things to Look at, what #year in the league it was for candidates, maybe compare current season to 2 years ago, or to their worst season.
+

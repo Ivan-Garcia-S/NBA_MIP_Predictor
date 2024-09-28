@@ -148,8 +148,134 @@ def find_differential_of_stats(df):
 
     return df, lowest_games_prev
 
+def get_previous_season(current_season):
+    years = current_season.split('-')
+    
+    first_year = str(int(years[0]) - 1)
+    second_year = '{:02d}'.format(int(years[1]) - 1)
+    return first_year + '-' + second_year
 
-if __name__ == "__main__":
+
+def find_lowest_games_season_before(top_n_candidates):
+    lowest = 82
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07', 
+    ]
+
+    df = pd.read_csv('MIPs.csv')
+    df['MIP Rank'] = df['MIP Rank'].str.replace('T', '').astype(int)
+
+    
+
+    with open('min_games_by_top_'+ str(top_n_candidates) +'_candidates_report.txt', 'w') as file:
+        
+        for season in seasons:
+            # Filter the DataFrame based on the condition
+            filtered_players = df[(df['MIP Rank'] <= top_n_candidates) & (df['Season'] == season)]
+            # Extract the list of player names
+            candidate_names = filtered_players['Player'].tolist()
+            
+            # Get previous season
+            prev_season = get_previous_season(season)
+            prev_season_df = pd.read_csv(prev_season + '-PerGame.csv')
+            
+            for candidate in candidate_names:
+                games_played = prev_season_df.loc[prev_season_df['Player'].str.contains(candidate, case=False, na=False), 'G'].values
+                try:
+                    games = games_played[0]
+
+                except:
+                    file.write(f"{candidate} played no games last year\n")
+                
+                else:
+                    lowest = min(games, lowest)
+                    file.write(f"{candidate} has played {games} in {prev_season}\n\n")
+        
+        # Write the final results
+        file.write("Found all games played in the previous year\n")
+        file.write(f"Minimum games played is {lowest}\n")
+
+def find_lowest_games_same_season(top_n_candidates):
+    lowest = 82
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07'
+    ]
+
+    df = pd.read_csv('MIPs.csv')
+    df['MIP Rank'] = df['MIP Rank'].str.replace('T', '').astype(int)
+
+    
+
+    with open('lowest_games_by_top_'+ str(top_n_candidates) +'_same_season_report.txt', 'w') as file:
+        
+        for season in seasons:
+            # Filter the DataFrame based on the condition
+            filtered_players = df[(df['MIP Rank'] <= top_n_candidates) & (df['Season'] == season)]
+            # Extract the list of player names
+            candidate_names = filtered_players['Player'].tolist()
+            
+           
+            season_df = pd.read_csv(season + '-PerGame.csv')
+            
+            for candidate in candidate_names:
+                games_played = season_df.loc[season_df['Player'].str.contains(candidate, case=False, na=False), 'G'].values
+                try:
+                    games = games_played[0]
+
+                except:
+                    file.write(f"{candidate} played no games this year\n")
+                
+                else:
+                    lowest = min(games, lowest)
+                    file.write(f"{candidate} has played {games} in {season}\n\n")
+        
+        # Write the final results
+        file.write("Found all games played in the same year\n")
+        file.write(f"Minimum games played is {lowest}\n")
+
+
+def find_highest_PER(top_n_candidates):
+    highest = 0
+    highest_player = None
+    highest_season = None
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07' #'2005-06', '2004-05', '2003-04',
+    ]
+
+    df = pd.read_csv('MIPs.csv')
+    df['MIP Rank'] = df['MIP Rank'].str.replace('T', '').astype(int)
+
+    with open('highest_per_by_top_'+ str(top_n_candidates) +'_candidates_report.txt', 'w') as file:
+        
+        for season in seasons:
+            # Filter the DataFrame based on the condition
+            filtered_players = df[(df['MIP Rank'] <= top_n_candidates) & (df['Season'] == season)]
+            # Extract the list of player names
+            candidate_names = filtered_players['Player'].tolist()
+            
+            season_df = pd.read_csv(season + ' Advanced.csv')
+            
+            for candidate in candidate_names:
+                per_values = season_df.loc[season_df['Player'].str.contains(candidate, case=False, na=False), 'PER'].values
+                try:
+                    per = per_values[0]
+
+                except:
+                    file.write(f"{candidate} has no recorded PER\n")
+                
+                else:
+                    if per > highest:
+                        highest_player = candidate
+                        highest_season = season
+                    highest = max(per, highest)
+                   
+                    file.write(f"{candidate} has PER of {per} in {season}\n\n")
+        
+        # Write the final results
+        file.write("Since 2006-07 season,\n")
+        file.write(f"Highest PER is {highest}, by {highest_player} in {highest_season}\n")
+
+def add_won_already_column():
     # Read your CSV file
     csv_file = 'MIPs.csv'
     df = pd.read_csv(csv_file)
@@ -159,17 +285,78 @@ if __name__ == "__main__":
 
     # Step 3: Save the updated DataFrame back to a CSV if needed
     df.to_csv('MIPs.csv', index=False)
+    print("Already Won column updated successfully!")
+
+
+def add_prev_games_column():
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+        '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07', 
+    ]
+
+    for season in seasons:
+        current_season_df = pd.read_csv(season + '-PerGame.csv')
+        
+        prev_season = get_previous_season(season)
+        prev_season_df = pd.read_csv(prev_season + '-PerGame.csv')
+       
+        # Keep only the 'Player' and 'G' columns from the previous season and rename 'G' to 'G_prev'
+        prev_season_df = prev_season_df[['Player', 'G']].rename(columns={'G': 'G_prev'})
+
+
+        # Drop duplicate players, keeping the first occurrence from the previous season
+        prev_season_first = prev_season_df.drop_duplicates(subset='Player', keep='first')
+        # Create a dictionary to map players to their 'G_prev' value
+        player_g_map = dict(zip(prev_season_first['Player'], prev_season_first['G_prev']))
+        # Use the mapping to add the 'G_prev' column to current_season_df
+        current_season_df['G_prev'] = current_season_df['Player'].map(player_g_map)
+        # Fill any NaN values in 'G_prev' with 0
+        current_season_df['G_prev'] = current_season_df['G_prev'].fillna(0)
+
+        current_season_df.to_csv(season + '-PerGame.csv', index=False)
+
+
+
+# ONE TIME USE
+# 
+#
+def remove_extra_letters_from_name():
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07', '2005-06'
+    ]
+
+    for season in seasons:
+        current_season_df = pd.read_csv(season + '-PerGame.csv')
+        current_season_df['Player'] = current_season_df['Player'].str.replace(r'[\*\\].*', '', regex=True)
+        current_season_df.to_csv(season + '-PerGame.csv', index=False)
+
+        advanced_df = pd.read_csv(season + ' Advanced.csv')
+        advanced_df['Player'] = advanced_df['Player'].str.replace(r'[\*\\].*', '', regex=True)
+        advanced_df.to_csv(season + ' Advanced.csv', index=False)
+
+        total_df = pd.read_csv(season + ' Total.csv')
+        total_df['Player'] = total_df['Player'].str.replace(r'[\*\\].*', '', regex=True)
+        total_df.to_csv(season + ' Total.csv', index=False)
+
+if __name__ == "__main__":
+    
+
+    #add_won_already_column()
+
+
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
 
-    # Find differential of stats from previous year.
-    #df, lowest_games_prev = find_differential_of_stats(df)
-    #df.to_csv('MIPs_updated.csv', index=False)
+    #find_lowest_games_season_before(3)
+    #find_lowest_games_same_season(5)
+    #find_highest_PER(5)
+    
+    add_prev_games_column()
+    #remove_extra_letters_from_name()
 
 
 
     #print("Lowest games prev", lowest_games_prev)
-    print("Already Won column updated successfully!")
+   
 
 
 
