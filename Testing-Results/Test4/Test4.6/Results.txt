@@ -1,0 +1,11 @@
+1. I noticed certain players that were guessed by the models like Zach Randolph 2006-07, made a big jump (18.0PPG -> 23.6PPG) from the year before, HOWEVER, they didn't make as big of a jump from their
+"best" prior season. (20.1 PPG in 2004). I need to account for the difference between the current season and the player's best prior season.
+
+2. I noticed 2006-07 season was very close between Monta Ellis and Kevin Martin, however Monta won by a small margin. The models guessed Kevin Martin had a higher MIP share. I noticed the Kings were 
+12 seed in 2005-06 and 23 seed in 2006-07, whereas the Warriors went from 22 seed to 12 seed in 2006-07. I think this set them apart and that I should add seed difference from the last year into the
+training data for the models. (Maybe also previous season seed)
+
+3. Something to look at: Monta Ellis averaged 6.8 PPG in 2005-06, and 16.5PPG in 2006-07. Kevin Martin went from 10.8 PPG to 20.2 PPG. Although they both increased their PPG by 10 pts, Monta had a greater % increase
+(%242 increase) while Martin had (187% increase). Might want to include this relational increase in PPG and possibly other stats in the future.
+
+4. 
