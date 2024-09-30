@@ -314,14 +314,94 @@ def add_prev_games_column():
 
         current_season_df.to_csv(season + '-PerGame.csv', index=False)
 
+def add_total_prev_games_column():
+    # List of seasons from the earliest to the latest
+    seasons = ['2001-02', '2002-03', '2003-04', '2004-05', '2005-06', '2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    
+    # Only player with an extra season of games unaccounted for that was an mip winner
+    players_games = {'Hedo Türkoğlu': 74}
+
+    # Iterate through seasons in chronological order
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv(season + '-PerGame.csv')
+
+        # Add a column for total games played before the current season
+        current_season_df['G_prev_total'] = current_season_df['Player'].apply(lambda player: players_games.get(player, 0))
+
+        # Track the players we’ve processed in the current season
+        processed_players = set()
+
+        # Iterate over players in the current season
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+            games_played = row['G']
+
+            # Only add games for the first occurrence of the player
+            if player not in processed_players:
+                # Update the player's total games in the dictionary
+                if player in players_games:
+                    players_games[player] += games_played
+                else:
+                    players_games[player] = games_played
+                processed_players.add(player)
+
+        # Write the updated DataFrame to a new CSV file (or overwrite if that's desired)
+        current_season_df.to_csv(season + '-PerGame-Updated.csv', index=False)
+
+
+# Function to add a column of # seasons played to the current year in Seasons Played column
+def add_seasons_prev():
+    # List of seasons from the earliest to the latest
+    seasons = ['2001-02', '2002-03', '2003-04', '2004-05', '2005-06', '2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    
+    # Only player with an extra season of games unaccounted for that was an mip winner
+    players_seasons = {'Hedo Türkoğlu': 1}
+
+    # Iterate through seasons in chronological order
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv('Updated Per Game Seasons/'+season + '-PerGame-Updated.csv')
+
+        # Add a column for total games played before the current season
+        current_season_df['Seasons Played'] = current_season_df['Player'].apply(lambda player: players_seasons.get(player, 0))
+
+        # Track the players we’ve processed in the current season
+        processed_players = set()
+
+        # Iterate over players in the current season
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+            played_season = row['G'] > 35 # Min number games to be considered a season played in this case is 35
+
+            # Only add games for the first occurrence of the player
+            if player not in processed_players:
+                # Update the player's total games in the dictionary
+                if player in players_seasons:
+                    if played_season:
+                        players_seasons[player] += 1
+                else:
+                    if played_season:
+                        players_seasons[player] = 1
+                    else:
+                        players_seasons[player] = 0
+                processed_players.add(player)
+
+        # Write the updated DataFrame to a new CSV file (or overwrite if that's desired)
+        current_season_df.to_csv(season + '-PerGame-Updated.csv', index=False)
+
+
 
 
 # ONE TIME USE
 # 
 #
 def remove_extra_letters_from_name():
-    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
-          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07', '2005-06'
+    seasons = [ '2005-06', '2004-05', '2003-04', '2002-03', '2001-02'
     ]
 
     for season in seasons:
@@ -350,7 +430,8 @@ if __name__ == "__main__":
     #find_lowest_games_same_season(5)
     #find_highest_PER(5)
     
-    add_prev_games_column()
+    add_seasons_prev()
+    #add_total_prev_games_column()
     #remove_extra_letters_from_name()
 
 

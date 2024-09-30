@@ -1,0 +1,1 @@
+Having seasons previously played over # games previously played had slightly beter R^2 value so we're sticking with that.

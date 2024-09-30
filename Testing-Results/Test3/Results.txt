@@ -1,5 +1,5 @@
-1. I realized I had a major issue with my data filtering. I was filtering the possible players to train the model on, by those who had an mip share of over 0 that year, 
-instead of by the minimum requirements met, OR having an MIP share of over 0. Also, I changed to filter out the ones with MIP share less than 0.04, as those with a lesser
+1. I realized I had a major issue with my data filtering. I was filtering the possible players to train the model on, by those who had an mip share of over 0 that year
+(instead of by the minimum requirements met) OR having an MIP share of over 0. Also, I changed to filter out the ones with MIP share less than 0.04, as those with a lesser
 score than that never had much of a chance to win the award and shouldn't be accounted for in the training.
 
 2. I noticed KD got guessed a lot by the models in 2009-10, even though he got low votes for the actual award. Looks to me because he was already very good as a player

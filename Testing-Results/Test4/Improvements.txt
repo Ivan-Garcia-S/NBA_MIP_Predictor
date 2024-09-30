@@ -1,0 +1,5 @@
+1. Removing ORB%, TOV% and TOV% difference bc I think they're not relevant.  
+
+2. Want to try both: count up number of games played total before the current season AND number of seasons played before the current season (min 35 games?)
+
+3. Want to include G_prev in training
