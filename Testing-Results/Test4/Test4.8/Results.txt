@@ -1,0 +1,2 @@
+Some models performed slightly better with both differences, some had worse performance. I am going to remove a lot of extra differences that I don't think are necessary to train with 
+for the next iteration.

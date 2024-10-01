@@ -430,7 +430,22 @@ if __name__ == "__main__":
     #find_lowest_games_same_season(5)
     #find_highest_PER(5)
     
-    add_seasons_prev()
+    #add_seasons_prev()
+    print(len(['Age', 'G', 'MP_PERGAME', 'FG_PERGAME', '3P_PERGAME', '3PA_PERGAME',
+       '3P%_PERGAME', '2P_PERGAME', '2PA_PERGAME', '2P%_PERGAME', 'FT_PERGAME',
+       'FT%_PERGAME', 'ORB_PERGAME', 'DRB_PERGAME', 'TRB_PERGAME',
+       'AST_PERGAME', 'BLK_PERGAME', 'TOV_PERGAME', 'PTS_PERGAME', 'G_prev',
+       'Seasons Played', '3PAr_ADVANCED', 'AST%_ADVANCED', 'USG%_ADVANCED',
+       'OWS_ADVANCED', 'WS_ADVANCED', 'OBPM_ADVANCED', 'BPM_ADVANCED',
+       'VORP_ADVANCED', 'G_PCT_diff', 'GS_PCT_diff', 'MP_PCT_diff',
+       'FG_PCT_diff', 'FGA_PCT_diff', '3P_PCT_diff', '3PA_PCT_diff',
+       '2P_PCT_diff', '2PA_PCT_diff', 'FT_PCT_diff', 'FTA_PCT_diff',
+       'DRB_PCT_diff', 'TRB_PCT_diff', 'AST_PCT_diff', 'BLK_PCT_diff',
+       'TOV_PCT_diff', 'PTS_PCT_diff', 'TRB_diff', 'AST_diff', 'PTS_diff',
+       'PER_PCT_diff', '3PAr_PCT_diff', 'ORB%_PCT_diff', 'AST%_PCT_diff',
+       'STL%_PCT_diff', 'BLK%_PCT_diff', 'USG%_PCT_diff', 'OWS_PCT_diff',
+       'DWS_PCT_diff', 'WS_PCT_diff', 'WS/48_PCT_diff', 'OBPM_PCT_diff',
+       'DBPM_PCT_diff', 'BPM_PCT_diff', 'VORP_PCT_diff', 'Seed', 'PCT']))
     #add_total_prev_games_column()
     #remove_extra_letters_from_name()
 

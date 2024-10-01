@@ -1,0 +1,1 @@
+I added the % difference and absolute difference in both the pergame stats and advanced stats.  Some models had slight improvements from before, others had slightly worse performance.
