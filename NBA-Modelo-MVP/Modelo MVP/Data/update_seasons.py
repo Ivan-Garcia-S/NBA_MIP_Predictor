@@ -395,7 +395,300 @@ def add_seasons_prev():
         current_season_df.to_csv(season + '-PerGame-Updated.csv', index=False)
 
 
+# Function to add a column of # seasons played to the current year in Seasons Played column
 
+def add_prev_season_stats():
+    # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    
+    # Only player with an extra season of games unaccounted for that was an mip winner
+    players_seasons = {}
+
+    # Iterate through seasons in chronological order
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv('Updated Per Game Seasons/'+season + '-PerGame-Updated.csv')
+        
+        prev_season = get_previous_season(season)
+        prev_season_df = pd.read_csv('Updated Per Game Seasons/'+prev_season + '-PerGame-Updated.csv')
+        games_played_prev_season = 0
+        while games_played_prev_season < 35:
+            pass
+
+        # Add a column for total games played before the current season
+        current_season_df['Seasons Played'] = current_season_df['Player'].apply(lambda player: players_seasons.get(player, 0))
+
+        # Track the players we’ve processed in the current season
+        processed_players = set()
+
+        # Iterate over players in the current season
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+            played_season = row['G'] > 35 # Min number games to be considered a season played in this case is 35
+
+            # Only add games for the first occurrence of the player
+            if player not in processed_players:
+                # Update the player's total games in the dictionary
+                if player in players_seasons:
+                    if played_season:
+                        players_seasons[player] += 1
+                else:
+                    if played_season:
+                        players_seasons[player] = 1
+                    else:
+                        players_seasons[player] = 0
+                processed_players.add(player)
+
+        # Write the updated DataFrame to a new CSV file (or overwrite if that's desired)
+        current_season_df.to_csv(season + '-PerGame-Updated.csv', index=False)
+
+####START
+####
+# Helper function to get the previous season string
+def get_previous_season2(current_season, seasons):
+    current_idx = seasons.index(current_season)
+    if current_idx > 0:
+        return seasons[current_idx - 1]
+    return None  # If no previous season exists
+
+# Helper function to find a valid previous season where the player played >= 35 games
+def find_valid_prev_season(player, current_season, seasons, min_games=35):
+    previous_season = get_previous_season2(current_season, seasons)
+    while previous_season:
+        try:
+            prev_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+            prev_player_row = prev_season_df[prev_season_df['Player'] == player]
+            
+            # Check if the player played at least min_games in the previous season
+            if not prev_player_row.empty and prev_player_row['G'].values[0] >= min_games:
+                return prev_player_row  # Return the row if valid
+        except FileNotFoundError:
+            pass  # Ignore missing files and move to the next season
+
+        # Move to the season before this one
+        previous_season = get_previous_season2(previous_season, seasons)
+    
+    return None  # If no valid previous season is found
+
+# Main function to add the previous season stats columns
+def add_previous_season_columns():
+    # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+
+    # Stats columns to track from the previous season
+    stat_columns = ['G', 'GS', 'MP', 'FG', 'FGA', '3P', '3PA', '2P', '2PA', 'FT', 'FTA', 
+                    'DRB', 'TRB', 'AST', 'BLK', 'TOV', 'PTS']
+
+    # Reverse the seasons list to process from the earliest to the latest
+    seasons.reverse()
+
+    # Iterate through seasons in chronological order
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv')
+
+        # Initialize 'X_prev_season' columns for current season
+        for stat in stat_columns:
+            current_season_df[f'{stat}_prev_season'] = 0
+
+        # Track the players we’ve processed in the current season
+        processed_players = set()
+
+        # Iterate over players in the current season
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+
+            # If the player has played at least one season
+            if row['Seasons Played'] > 0:
+                # Find a valid previous season for this player
+                prev_player_row = find_valid_prev_season(player, season, seasons)
+                
+                if prev_player_row is not None:
+                    # Copy stats from the valid previous season to the current season
+                    for stat in stat_columns:
+                        current_season_df.at[index, f'{stat}_prev_season'] = prev_player_row[stat].values[0]
+
+            # Only update the stats for the first occurrence of a player in the season
+            if player not in processed_players:
+                processed_players.add(player)
+
+        # Write the updated DataFrame to a new CSV file (or overwrite if desired)
+        current_season_df.to_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv', index=False)
+
+def add_previous_season_col():
+     # List of seasons from the earliest to the latest
+    seasons = [ '2002-03', '2003-04', '2004-05',
+        '2005-06','2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'
+       ]
+    
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv')
+        current_season_advanced_df = pd.read_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv')
+
+        # For each player, find their previous valid season (over 35 games played)
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+            # If the player hasn't previously played at least one season, set None
+            if row['Seasons Played'] == 0:
+                current_season_df.at[index, 'Previous Season'] = "None"
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'Previous Season'] = "None"
+            else:
+                previous_season = get_previous_season(season)
+                previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+                #previous_season_advanced_df = pd.read_csv(f'{previous_season} Advanced.csv')
+                try:
+                    g_prev = previous_season_df.loc[previous_season_df['Player'] == player, 'G'].values[0]
+                except:
+                    print(player + " did not play in " + previous_season)
+                    g_prev = 0
+                    print("g_prev = " + str(g_prev))
+                # Wait to find the previous valid season
+                while not g_prev or g_prev < 35:
+                    previous_season = get_previous_season(previous_season)
+                    previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+                    #previous_season_advanced_df = pd.read_csv(f'{previous_season} Advanced.csv')
+                    try:
+                        g_prev = previous_season_df.loc[previous_season_df['Player'] == player, 'G'].values[0]
+                        if "Harrington" in player:
+                            print("g_prev after another prev= " + str(g_prev))
+                    except:
+                        print(player + " did not play in " + previous_season)
+
+                # Once we've found the right season, add it to Pergame and Advanced data
+                current_season_df.at[index, 'Previous Season'] = previous_season
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'Previous Season'] = previous_season
+                
+        current_season_df.to_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv', index=False)
+        current_season_advanced_df.to_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv', index=False)
+
+
+def add_previous_season_values():
+     # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv')
+        current_season_advanced_df = pd.read_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv')
+
+        # For each player, find their previous valid season (over 35 games played)
+        for index, row in current_season_df.iterrows():
+            previous_season = row['Previous Season']
+            player = row['Player']
+            
+            #print("Player is " + player)
+    
+
+            if not pd.isna(previous_season):
+                previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+                first_occurrence = previous_season_df.loc[previous_season_df['Player'] == player].head(1)
+
+                previous_season_advanced_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-Advanced-Updated.csv')
+                first_occurrence_advanced = previous_season_advanced_df.loc[previous_season_advanced_df['Player'] == player].head(1)
+                
+                print("SEASON: " + season)
+                print("prev year is " + previous_season + ", PLAYER is " + player)
+                # Get previous season pergame values
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_PTS'] = first_occurrence['PTS'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_TRB'] = first_occurrence['TRB'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_AST'] = first_occurrence['AST'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_STL'] = first_occurrence['STL'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_BLK'] = first_occurrence['BLK'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_MP'] = first_occurrence['MP'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_G'] = first_occurrence['G'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FGA'] = first_occurrence['FGA'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FG'] = first_occurrence['FG'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_TOV'] = first_occurrence['TOV'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_PTS'] = first_occurrence['PTS'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3P'] = first_occurrence['3P'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3PA'] = first_occurrence['3PA'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2P'] = first_occurrence['2P'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3P%'] = first_occurrence['3P%'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2PA'] = first_occurrence['2PA'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2P%'] = first_occurrence['2P%'].values[0]
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FT%'] = first_occurrence['FT%'].values[0]
+
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_PER'] = first_occurrence_advanced['PER'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_TRB%'] = first_occurrence_advanced['TRB%'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_AST%'] = first_occurrence_advanced['AST%'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_BPM'] = first_occurrence_advanced['BPM'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_VORP'] = first_occurrence_advanced['VORP'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_USG%'] = first_occurrence_advanced['USG%'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_WS'] = first_occurrence_advanced['WS'].values[0]
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_WS/48'] = first_occurrence_advanced['WS/48'].values[0]
+
+                
+                '''
+                ps_pts = first_occurrence['PTS'].values[0]
+                ps_trb = first_occurrence['TRB'].values[0]
+                ps_ast = first_occurrence['AST'].values[0]
+                ps_stl = first_occurrence['STL'].values[0]
+                ps_blk = first_occurrence['BLK'].values[0]
+                ps_mp = first_occurrence['MP'].values[0]
+                ps_g = first_occurrence['G'].values[0]
+                ps_fga = first_occurrence['FGA'].values[0]
+                ps_fg = first_occurrence['FG'].values[0]
+                ps_tov = first_occurrence['TOV'].values[0]
+                ps_3P = first_occurrence['3P'].values[0]
+                ps_3PA = first_occurrence['3PA'].values[0]
+                ps_2P = first_occurrence['2P'].values[0]
+                ps_2PA = first_occurrence['2PA'].values[0]
+                ps_3P_PERCENT = first_occurrence['3P%'].values[0]
+                ps_2P_PERCENT= first_occurrence['2P%'].values[0]
+                ps_ft_PERCENT = first_occurrence['FT%'].values[0]
+                
+
+                # Get previous season advanced stats
+                ps_per = first_occurrence['PER'].values[0]
+                ps_trb_PERCENT = first_occurrence['TRB%'].values[0]
+                ps_ast_PERCENT = first_occurrence['AST%'].values[0]
+                ps_bpm = first_occurrence['BPM'].values[0]
+                ps_vorp= first_occurrence['VORP'].values[0]
+                ps_usg_PERCENT = first_occurrence['USG%'].values[0]
+                ps_ws = first_occurrence['WS'].values[0]
+                ps_ws48 = first_occurrence['WS/48'].values[0]
+                
+                '''
+            else:
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_PTS'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_TRB'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_AST'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_STL'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_BLK'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_MP'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_G'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FGA'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FG'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_TOV'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_PTS'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3P'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3PA'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2P'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_3P%'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2PA'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_2P%'] = 0
+                current_season_df.loc[current_season_df['Player'] == player, 'PS_FT%'] =0
+
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_PER'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_TRB%'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_AST%'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_BPM'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_VORP'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_USG%'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_WS'] = 0
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'PS_WS/48'] = 0
+
+        current_season_df.to_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv', index=False)
+        current_season_advanced_df.to_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv', index=False) 
 
 # ONE TIME USE
 # 
@@ -421,8 +714,8 @@ if __name__ == "__main__":
     
 
     #add_won_already_column()
-
-
+    #add_previous_season_values()
+    add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
 
@@ -431,21 +724,6 @@ if __name__ == "__main__":
     #find_highest_PER(5)
     
     #add_seasons_prev()
-    print(len(['Age', 'G', 'MP_PERGAME', 'FG_PERGAME', '3P_PERGAME', '3PA_PERGAME',
-       '3P%_PERGAME', '2P_PERGAME', '2PA_PERGAME', '2P%_PERGAME', 'FT_PERGAME',
-       'FT%_PERGAME', 'ORB_PERGAME', 'DRB_PERGAME', 'TRB_PERGAME',
-       'AST_PERGAME', 'BLK_PERGAME', 'TOV_PERGAME', 'PTS_PERGAME', 'G_prev',
-       'Seasons Played', '3PAr_ADVANCED', 'AST%_ADVANCED', 'USG%_ADVANCED',
-       'OWS_ADVANCED', 'WS_ADVANCED', 'OBPM_ADVANCED', 'BPM_ADVANCED',
-       'VORP_ADVANCED', 'G_PCT_diff', 'GS_PCT_diff', 'MP_PCT_diff',
-       'FG_PCT_diff', 'FGA_PCT_diff', '3P_PCT_diff', '3PA_PCT_diff',
-       '2P_PCT_diff', '2PA_PCT_diff', 'FT_PCT_diff', 'FTA_PCT_diff',
-       'DRB_PCT_diff', 'TRB_PCT_diff', 'AST_PCT_diff', 'BLK_PCT_diff',
-       'TOV_PCT_diff', 'PTS_PCT_diff', 'TRB_diff', 'AST_diff', 'PTS_diff',
-       'PER_PCT_diff', '3PAr_PCT_diff', 'ORB%_PCT_diff', 'AST%_PCT_diff',
-       'STL%_PCT_diff', 'BLK%_PCT_diff', 'USG%_PCT_diff', 'OWS_PCT_diff',
-       'DWS_PCT_diff', 'WS_PCT_diff', 'WS/48_PCT_diff', 'OBPM_PCT_diff',
-       'DBPM_PCT_diff', 'BPM_PCT_diff', 'VORP_PCT_diff', 'Seed', 'PCT']))
     #add_total_prev_games_column()
     #remove_extra_letters_from_name()
 
