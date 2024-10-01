@@ -521,10 +521,10 @@ def add_previous_season_columns():
 
 def add_previous_season_col():
      # List of seasons from the earliest to the latest
-    seasons = [ '2002-03', '2003-04', '2004-05',
-        '2005-06','2006-07', '2007-08', '2008-09', '2009-10',
-               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
-               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'
+    seasons = ['2001-02',# '2002-03', '2003-04', '2004-05',
+      #  '2005-06','2006-07', '2007-08', '2008-09', '2009-10',
+       #       '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+        #       '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'
        ]
     
     for season in seasons:
@@ -548,7 +548,6 @@ def add_previous_season_col():
                 except:
                     print(player + " did not play in " + previous_season)
                     g_prev = 0
-                    print("g_prev = " + str(g_prev))
                 # Wait to find the previous valid season
                 while not g_prev or g_prev < 35:
                     previous_season = get_previous_season(previous_season)
@@ -556,8 +555,7 @@ def add_previous_season_col():
                     #previous_season_advanced_df = pd.read_csv(f'{previous_season} Advanced.csv')
                     try:
                         g_prev = previous_season_df.loc[previous_season_df['Player'] == player, 'G'].values[0]
-                        if "Harrington" in player:
-                            print("g_prev after another prev= " + str(g_prev))
+                        
                     except:
                         print(player + " did not play in " + previous_season)
 
@@ -588,15 +586,18 @@ def add_previous_season_values():
             #print("Player is " + player)
     
 
-            if not pd.isna(previous_season):
+            # If their last season was in 2001 we most likely don't care about them
+            if not pd.isna(previous_season) and previous_season != "2001-02":
                 previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
                 first_occurrence = previous_season_df.loc[previous_season_df['Player'] == player].head(1)
+
+                #print("SEASON: " + season)
+                #print("prev year is " + previous_season + ", PLAYER is " + player)
 
                 previous_season_advanced_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-Advanced-Updated.csv')
                 first_occurrence_advanced = previous_season_advanced_df.loc[previous_season_advanced_df['Player'] == player].head(1)
                 
-                print("SEASON: " + season)
-                print("prev year is " + previous_season + ", PLAYER is " + player)
+                
                 # Get previous season pergame values
                 current_season_df.loc[current_season_df['Player'] == player, 'PS_PTS'] = first_occurrence['PTS'].values[0]
                 current_season_df.loc[current_season_df['Player'] == player, 'PS_TRB'] = first_occurrence['TRB'].values[0]
@@ -714,8 +715,8 @@ if __name__ == "__main__":
     
 
     #add_won_already_column()
-    #add_previous_season_values()
-    add_previous_season_col()
+    add_previous_season_values()
+    #add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
 
