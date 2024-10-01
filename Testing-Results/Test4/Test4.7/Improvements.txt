@@ -1,0 +1,1 @@
+I changed the absolute difference in pergame and advanced stats to a % difference. Models appeared to have worse performance.
