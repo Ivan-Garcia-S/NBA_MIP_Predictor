@@ -1,0 +1,4 @@
+The end results weren't great from this test but I learned this:
+
+1. PTS_diff_BS, (PTS differential from best season) FGA_diff_BS, and VORP_diff_BS were the top 3 most important "best season" differentials, the rest seemed to have little impact. I might
+just keep these three moving forwards.
