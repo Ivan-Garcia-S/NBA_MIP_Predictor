@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Chicago Bulls,62-20,17.0
-2,San Antonio Spurs,61-21,12.0
-3,Miami Heat,58-24,13.0
-4,Dallas Mavericks,57-25,4.0
-5,Los Angeles Lakers,57-25,3.0
-6,Boston Celtics,56-26,9.0
-7,Oklahoma City Thunder,55-27,10.0
-8,Orlando Magic,52-30,2.0
-9,Denver Nuggets,50-32,7.0
-10,Portland Trail Blazers,48-34,11.0
-11,Memphis Grizzlies,46-36,18.0
-12,New Orleans Hornets,46-36,20.0
-13,Atlanta Hawks,44-38,6.0
-14,Houston Rockets,43-39,16.0
-15,New York Knicks,42-40,23.0
-16,Philadelphia 76ers,41-41,25.0
-17,Phoenix Suns,40-42,5.0
-18,Utah Jazz,39-43,8.0
-19,Indiana Pacers,37-45,21.0
-20,Golden State Warriors,36-46,26.0
-21,Milwaukee Bucks,35-47,14.0
-22,Charlotte Bobcats,34-48,15.0
-23,Los Angeles Clippers,32-50,22.0
-24,Detroit Pistons,30-52,24.0
-25,New Jersey Nets,24-58,30.0
-26,Sacramento Kings,24-58,28.0
-27,Washington Wizards,23-59,27.0
-28,Toronto Raptors,22-60,19.0
-29,Cleveland Cavaliers,19-63,1.0
-30,Minnesota Timberwolves,17-65,29.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Chicago Bulls,62-20,17.0,16.0
+2,San Antonio Spurs,61-21,12.0,10.0
+3,Miami Heat,58-24,13.0,10.0
+4,Dallas Mavericks,57-25,4.0,0.0
+5,Los Angeles Lakers,57-25,3.0,-2.0
+6,Boston Celtics,56-26,9.0,3.0
+7,Oklahoma City Thunder,55-27,10.0,3.0
+8,Orlando Magic,52-30,2.0,-6.0
+9,Denver Nuggets,50-32,7.0,-2.0
+10,Portland Trail Blazers,48-34,11.0,1.0
+11,Memphis Grizzlies,46-36,18.0,7.0
+12,New Orleans Hornets,46-36,20.0,8.0
+13,Atlanta Hawks,44-38,6.0,-7.0
+14,Houston Rockets,43-39,16.0,2.0
+15,New York Knicks,42-40,23.0,8.0
+16,Philadelphia 76ers,41-41,25.0,9.0
+17,Phoenix Suns,40-42,5.0,-12.0
+18,Utah Jazz,39-43,8.0,-10.0
+19,Indiana Pacers,37-45,21.0,2.0
+20,Golden State Warriors,36-46,26.0,6.0
+21,Milwaukee Bucks,35-47,14.0,-7.0
+22,Charlotte Bobcats,34-48,15.0,-7.0
+23,Los Angeles Clippers,32-50,22.0,-1.0
+24,Detroit Pistons,30-52,24.0,0.0
+25,New Jersey Nets,24-58,30.0,5.0
+26,Sacramento Kings,24-58,28.0,2.0
+27,Washington Wizards,23-59,27.0,0.0
+28,Toronto Raptors,22-60,19.0,-9.0
+29,Cleveland Cavaliers,19-63,1.0,-28.0
+30,Minnesota Timberwolves,17-65,29.0,-1.0

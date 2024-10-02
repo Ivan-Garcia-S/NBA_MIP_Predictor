@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Boston Celtics,66-16,29.0
-2,Detroit Pistons,59-23,4.0
-3,Los Angeles Lakers,57-25,13.0
-4,New Orleans Hornets,56-26,
-5,San Antonio Spurs,56-26,3.0
-6,Houston Rockets,55-27,5.0
-7,Phoenix Suns,55-27,2.0
-8,Utah Jazz,54-28,6.0
-9,Orlando Magic,52-30,16.0
-10,Dallas Mavericks,51-31,1.0
-11,Denver Nuggets,50-32,10.0
-12,Golden State Warriors,48-34,12.0
-13,Cleveland Cavaliers,45-37,7.0
-14,Washington Wizards,43-39,15.0
-15,Toronto Raptors,41-41,9.0
-16,Portland Trail Blazers,41-41,25.0
-17,Philadelphia 76ers,40-42,20.0
-18,Sacramento Kings,38-44,23.0
-19,Atlanta Hawks,37-45,27.0
-20,Indiana Pacers,36-46,19.0
-21,New Jersey Nets,34-48,14.0
-22,Chicago Bulls,33-49,8.0
-23,Charlotte Bobcats,32-50,21.0
-24,Milwaukee Bucks,26-56,28.0
-25,Los Angeles Clippers,23-59,17.0
-26,New York Knicks,23-59,22.0
-27,Memphis Grizzlies,22-60,30.0
-28,Minnesota Timberwolves,22-60,24.0
-29,Seattle SuperSonics,20-62,26.0
-30,Miami Heat,15-67,11.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Boston Celtics,66-16,29.0,28.0
+2,Detroit Pistons,59-23,4.0,2.0
+3,Los Angeles Lakers,57-25,13.0,10.0
+4,New Orleans Hornets,56-26,,
+5,San Antonio Spurs,56-26,3.0,-2.0
+6,Houston Rockets,55-27,5.0,-1.0
+7,Phoenix Suns,55-27,2.0,-5.0
+8,Utah Jazz,54-28,6.0,-2.0
+9,Orlando Magic,52-30,16.0,7.0
+10,Dallas Mavericks,51-31,1.0,-9.0
+11,Denver Nuggets,50-32,10.0,-1.0
+12,Golden State Warriors,48-34,12.0,0.0
+13,Cleveland Cavaliers,45-37,7.0,-6.0
+14,Washington Wizards,43-39,15.0,1.0
+15,Toronto Raptors,41-41,9.0,-6.0
+16,Portland Trail Blazers,41-41,25.0,9.0
+17,Philadelphia 76ers,40-42,20.0,3.0
+18,Sacramento Kings,38-44,23.0,5.0
+19,Atlanta Hawks,37-45,27.0,8.0
+20,Indiana Pacers,36-46,19.0,-1.0
+21,New Jersey Nets,34-48,14.0,-7.0
+22,Chicago Bulls,33-49,8.0,-14.0
+23,Charlotte Bobcats,32-50,21.0,-2.0
+24,Milwaukee Bucks,26-56,28.0,4.0
+25,Los Angeles Clippers,23-59,17.0,-8.0
+26,New York Knicks,23-59,22.0,-4.0
+27,Memphis Grizzlies,22-60,30.0,3.0
+28,Minnesota Timberwolves,22-60,24.0,-4.0
+29,Seattle SuperSonics,20-62,26.0,-3.0
+30,Miami Heat,15-67,11.0,-19.0

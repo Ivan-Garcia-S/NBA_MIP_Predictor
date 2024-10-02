@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Milwaukee Bucks,56-17,1.0
-2,Toronto Raptors,53-19,2.0
-3,Los Angeles Lakers,52-19,20.0
-4,Los Angeles Clippers,49-23,12.0
-5,Boston Celtics,48-24,9.0
-6,Denver Nuggets,46-27,4.0
-7,Indiana Pacers,45-28,11.0
-8,Houston Rockets,44-28,5.0
-9,Miami Heat,44-29,18.0
-10,Oklahoma City Thunder,44-28,10.0
-11,Utah Jazz,44-28,8.0
-12,Dallas Mavericks,43-32,22.0
-13,Philadelphia 76ers,43-30,7.0
-14,Brooklyn Nets,35-37,14.0
-15,Portland Trail Blazers,35-39,6.0
-16,Memphis Grizzlies,34-39,23.0
-17,Phoenix Suns,34-39,29.0
-18,Orlando Magic,33-40,15.0
-19,San Antonio Spurs,32-39,13.0
-20,Sacramento Kings,31-41,19.0
-21,New Orleans Pelicans,30-42,24.0
-22,Washington Wizards,25-47,25.0
-23,Charlotte Hornets,23-42,17.0
-24,Chicago Bulls,22-43,27.0
-25,New York Knicks,21-45,30.0
-26,Atlanta Hawks,20-47,26.0
-27,Detroit Pistons,20-46,16.0
-28,Cleveland Cavaliers,19-46,28.0
-29,Minnesota Timberwolves,19-45,21.0
-30,Golden State Warriors,15-50,3.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Milwaukee Bucks,56-17,1.0,0.0
+2,Toronto Raptors,53-19,2.0,0.0
+3,Los Angeles Lakers,52-19,20.0,17.0
+4,Los Angeles Clippers,49-23,12.0,8.0
+5,Boston Celtics,48-24,9.0,4.0
+6,Denver Nuggets,46-27,4.0,-2.0
+7,Indiana Pacers,45-28,11.0,4.0
+8,Houston Rockets,44-28,5.0,-3.0
+9,Miami Heat,44-29,18.0,9.0
+10,Oklahoma City Thunder,44-28,10.0,0.0
+11,Utah Jazz,44-28,8.0,-3.0
+12,Dallas Mavericks,43-32,22.0,10.0
+13,Philadelphia 76ers,43-30,7.0,-6.0
+14,Brooklyn Nets,35-37,14.0,0.0
+15,Portland Trail Blazers,35-39,6.0,-9.0
+16,Memphis Grizzlies,34-39,23.0,7.0
+17,Phoenix Suns,34-39,29.0,12.0
+18,Orlando Magic,33-40,15.0,-3.0
+19,San Antonio Spurs,32-39,13.0,-6.0
+20,Sacramento Kings,31-41,19.0,-1.0
+21,New Orleans Pelicans,30-42,24.0,3.0
+22,Washington Wizards,25-47,25.0,3.0
+23,Charlotte Hornets,23-42,17.0,-6.0
+24,Chicago Bulls,22-43,27.0,3.0
+25,New York Knicks,21-45,30.0,5.0
+26,Atlanta Hawks,20-47,26.0,0.0
+27,Detroit Pistons,20-46,16.0,-11.0
+28,Cleveland Cavaliers,19-46,28.0,0.0
+29,Minnesota Timberwolves,19-45,21.0,-8.0
+30,Golden State Warriors,15-50,3.0,-27.0

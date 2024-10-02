@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Cleveland Cavaliers,66-16,13.0
-2,Los Angeles Lakers,65-17,3.0
-3,Boston Celtics,62-20,1.0
-4,Orlando Magic,59-23,9.0
-5,Denver Nuggets,54-28,11.0
-6,Portland Trail Blazers,54-28,16.0
-7,San Antonio Spurs,54-28,5.0
-8,Houston Rockets,53-29,6.0
-9,Dallas Mavericks,50-32,10.0
-10,New Orleans Hornets,49-33,4.0
-11,Utah Jazz,48-34,8.0
-12,Atlanta Hawks,47-35,19.0
-13,Phoenix Suns,46-36,7.0
-14,Miami Heat,43-39,30.0
-15,Chicago Bulls,41-41,22.0
-16,Philadelphia 76ers,41-41,17.0
-17,Detroit Pistons,39-43,2.0
-18,Indiana Pacers,36-46,20.0
-19,Charlotte Bobcats,35-47,23.0
-20,Milwaukee Bucks,34-48,24.0
-21,New Jersey Nets,34-48,21.0
-22,Toronto Raptors,33-49,15.0
-23,New York Knicks,32-50,26.0
-24,Golden State Warriors,29-53,12.0
-25,Memphis Grizzlies,24-58,27.0
-26,Minnesota Timberwolves,24-58,28.0
-27,Oklahoma City Thunder,23-59,
-28,Los Angeles Clippers,19-63,25.0
-29,Washington Wizards,19-63,14.0
-30,Sacramento Kings,17-65,18.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Cleveland Cavaliers,66-16,13.0,12.0
+2,Los Angeles Lakers,65-17,3.0,1.0
+3,Boston Celtics,62-20,1.0,-2.0
+4,Orlando Magic,59-23,9.0,5.0
+5,Denver Nuggets,54-28,11.0,6.0
+6,Portland Trail Blazers,54-28,16.0,10.0
+7,San Antonio Spurs,54-28,5.0,-2.0
+8,Houston Rockets,53-29,6.0,-2.0
+9,Dallas Mavericks,50-32,10.0,1.0
+10,New Orleans Hornets,49-33,4.0,-6.0
+11,Utah Jazz,48-34,8.0,-3.0
+12,Atlanta Hawks,47-35,19.0,7.0
+13,Phoenix Suns,46-36,7.0,-6.0
+14,Miami Heat,43-39,30.0,16.0
+15,Chicago Bulls,41-41,22.0,7.0
+16,Philadelphia 76ers,41-41,17.0,1.0
+17,Detroit Pistons,39-43,2.0,-15.0
+18,Indiana Pacers,36-46,20.0,2.0
+19,Charlotte Bobcats,35-47,23.0,4.0
+20,Milwaukee Bucks,34-48,24.0,4.0
+21,New Jersey Nets,34-48,21.0,0.0
+22,Toronto Raptors,33-49,15.0,-7.0
+23,New York Knicks,32-50,26.0,3.0
+24,Golden State Warriors,29-53,12.0,-12.0
+25,Memphis Grizzlies,24-58,27.0,2.0
+26,Minnesota Timberwolves,24-58,28.0,2.0
+27,Oklahoma City Thunder,23-59,,
+28,Los Angeles Clippers,19-63,25.0,-3.0
+29,Washington Wizards,19-63,14.0,-15.0
+30,Sacramento Kings,17-65,18.0,-12.0

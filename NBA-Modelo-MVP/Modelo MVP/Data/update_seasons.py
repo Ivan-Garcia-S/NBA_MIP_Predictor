@@ -875,7 +875,7 @@ def add_difference_seed_col():
         for index, row in current_standings.iterrows():
             curr_seed = row['Seed']
             prev_seed = row['Previous Seed']
-            row['Seed Difference'] =  prev_seed - curr_seed # backwards bc if they go down in seed the team got better
+            current_standings.loc[index, 'Seed Difference'] = prev_seed - curr_seed # backwards bc if they go down in seed the team got better
             
             #print(team + " in " + season+ " PREV SEED = " + str(previous_standings.loc[previous_standings['Team'] == team]["Seed"].values[0]))
         current_standings.to_csv(f'Updated Per Game Seasons/{season}-Standings-Updated.csv', index=False) 
@@ -888,7 +888,7 @@ if __name__ == "__main__":
     #add_won_already_column()
     #add_previous_season_values()
     #add_best_season_col()
-    add_previous_seed_col()
+    add_difference_seed_col()
     #add_best_season_values()
     #add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values

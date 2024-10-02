@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,San Antonio Spurs,62-20,3.0
-2,Oklahoma City Thunder,59-23,2.0
-3,Los Angeles Clippers,57-25,5.0
-4,Indiana Pacers,56-26,9.0
-5,Houston Rockets,54-28,12.0
-6,Miami Heat,54-28,1.0
-7,Portland Trail Blazers,54-28,21.0
-8,Golden State Warriors,51-31,10.0
-9,Memphis Grizzlies,50-32,6.0
-10,Dallas Mavericks,49-33,17.0
-11,Chicago Bulls,48-34,11.0
-12,Toronto Raptors,48-34,20.0
-13,Phoenix Suns,48-34,27.0
-14,Brooklyn Nets,44-38,8.0
-15,Washington Wizards,44-38,24.0
-16,Charlotte Bobcats,43-39,29.0
-17,Minnesota Timberwolves,40-42,22.0
-18,Atlanta Hawks,38-44,14.0
-19,New York Knicks,37-45,7.0
-20,Denver Nuggets,36-46,4.0
-21,New Orleans Pelicans,34-48,
-22,Cleveland Cavaliers,33-49,28.0
-23,Detroit Pistons,29-53,23.0
-24,Sacramento Kings,28-54,25.0
-25,Los Angeles Lakers,27-55,13.0
-26,Boston Celtics,25-57,16.0
-27,Utah Jazz,25-57,15.0
-28,Orlando Magic,23-59,30.0
-29,Philadelphia 76ers,19-63,19.0
-30,Milwaukee Bucks,15-67,18.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,San Antonio Spurs,62-20,3.0,2.0
+2,Oklahoma City Thunder,59-23,2.0,0.0
+3,Los Angeles Clippers,57-25,5.0,2.0
+4,Indiana Pacers,56-26,9.0,5.0
+5,Houston Rockets,54-28,12.0,7.0
+6,Miami Heat,54-28,1.0,-5.0
+7,Portland Trail Blazers,54-28,21.0,14.0
+8,Golden State Warriors,51-31,10.0,2.0
+9,Memphis Grizzlies,50-32,6.0,-3.0
+10,Dallas Mavericks,49-33,17.0,7.0
+11,Chicago Bulls,48-34,11.0,0.0
+12,Toronto Raptors,48-34,20.0,8.0
+13,Phoenix Suns,48-34,27.0,14.0
+14,Brooklyn Nets,44-38,8.0,-6.0
+15,Washington Wizards,44-38,24.0,9.0
+16,Charlotte Bobcats,43-39,29.0,13.0
+17,Minnesota Timberwolves,40-42,22.0,5.0
+18,Atlanta Hawks,38-44,14.0,-4.0
+19,New York Knicks,37-45,7.0,-12.0
+20,Denver Nuggets,36-46,4.0,-16.0
+21,New Orleans Pelicans,34-48,,
+22,Cleveland Cavaliers,33-49,28.0,6.0
+23,Detroit Pistons,29-53,23.0,0.0
+24,Sacramento Kings,28-54,25.0,1.0
+25,Los Angeles Lakers,27-55,13.0,-12.0
+26,Boston Celtics,25-57,16.0,-10.0
+27,Utah Jazz,25-57,15.0,-12.0
+28,Orlando Magic,23-59,30.0,2.0
+29,Philadelphia 76ers,19-63,19.0,-10.0
+30,Milwaukee Bucks,15-67,18.0,-12.0

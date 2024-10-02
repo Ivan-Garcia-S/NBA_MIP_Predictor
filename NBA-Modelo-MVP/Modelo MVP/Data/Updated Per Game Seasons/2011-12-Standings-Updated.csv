@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Chicago Bulls,50-16,1.0
-2,San Antonio Spurs,50-16,2.0
-3,Oklahoma City Thunder,47-19,7.0
-4,Miami Heat,46-20,3.0
-5,Indiana Pacers,42-24,19.0
-6,Los Angeles Lakers,41-25,5.0
-7,Memphis Grizzlies,41-25,11.0
-8,Atlanta Hawks,40-26,13.0
-9,Los Angeles Clippers,40-26,23.0
-10,Boston Celtics,39-27,6.0
-11,Denver Nuggets,38-28,9.0
-12,Orlando Magic,37-29,8.0
-13,Dallas Mavericks,36-30,4.0
-14,New York Knicks,36-30,15.0
-15,Utah Jazz,36-30,18.0
-16,Philadelphia 76ers,35-31,16.0
-17,Houston Rockets,34-32,14.0
-18,Phoenix Suns,33-33,17.0
-19,Milwaukee Bucks,31-35,21.0
-20,Portland Trail Blazers,28-38,10.0
-21,Minnesota Timberwolves,26-40,30.0
-22,Detroit Pistons,25-41,24.0
-23,Golden State Warriors,23-43,20.0
-24,Toronto Raptors,23-43,28.0
-25,New Jersey Nets,22-44,25.0
-26,Sacramento Kings,22-44,26.0
-27,Cleveland Cavaliers,21-45,29.0
-28,New Orleans Hornets,21-45,12.0
-29,Washington Wizards,20-46,27.0
-30,Charlotte Bobcats,7-59,22.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Chicago Bulls,50-16,1.0,0.0
+2,San Antonio Spurs,50-16,2.0,0.0
+3,Oklahoma City Thunder,47-19,7.0,4.0
+4,Miami Heat,46-20,3.0,-1.0
+5,Indiana Pacers,42-24,19.0,14.0
+6,Los Angeles Lakers,41-25,5.0,-1.0
+7,Memphis Grizzlies,41-25,11.0,4.0
+8,Atlanta Hawks,40-26,13.0,5.0
+9,Los Angeles Clippers,40-26,23.0,14.0
+10,Boston Celtics,39-27,6.0,-4.0
+11,Denver Nuggets,38-28,9.0,-2.0
+12,Orlando Magic,37-29,8.0,-4.0
+13,Dallas Mavericks,36-30,4.0,-9.0
+14,New York Knicks,36-30,15.0,1.0
+15,Utah Jazz,36-30,18.0,3.0
+16,Philadelphia 76ers,35-31,16.0,0.0
+17,Houston Rockets,34-32,14.0,-3.0
+18,Phoenix Suns,33-33,17.0,-1.0
+19,Milwaukee Bucks,31-35,21.0,2.0
+20,Portland Trail Blazers,28-38,10.0,-10.0
+21,Minnesota Timberwolves,26-40,30.0,9.0
+22,Detroit Pistons,25-41,24.0,2.0
+23,Golden State Warriors,23-43,20.0,-3.0
+24,Toronto Raptors,23-43,28.0,4.0
+25,New Jersey Nets,22-44,25.0,0.0
+26,Sacramento Kings,22-44,26.0,0.0
+27,Cleveland Cavaliers,21-45,29.0,2.0
+28,New Orleans Hornets,21-45,12.0,-16.0
+29,Washington Wizards,20-46,27.0,-2.0
+30,Charlotte Bobcats,7-59,22.0,-8.0

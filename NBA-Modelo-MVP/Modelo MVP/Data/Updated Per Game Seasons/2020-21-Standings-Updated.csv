@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Utah Jazz,52-20,11.0
-2,Phoenix Suns,51-21,17.0
-3,Philadelphia 76ers,49-23,13.0
-4,Brooklyn Nets,48-24,14.0
-5,Denver Nuggets,47-25,6.0
-6,Los Angeles Clippers,47-25,4.0
-7,Milwaukee Bucks,46-26,1.0
-8,Dallas Mavericks,42-30,12.0
-9,Los Angeles Lakers,42-30,3.0
-10,Portland Trail Blazers,42-30,15.0
-11,Atlanta Hawks,41-31,26.0
-12,New York Knicks,41-31,25.0
-13,Miami Heat,40-32,9.0
-14,Golden State Warriors,39-33,30.0
-15,Memphis Grizzlies,38-34,16.0
-16,Boston Celtics,36-36,5.0
-17,Washington Wizards,34-38,22.0
-18,Indiana Pacers,34-38,7.0
-19,Charlotte Hornets,33-39,23.0
-20,San Antonio Spurs,33-39,19.0
-21,Chicago Bulls,31-41,24.0
-22,New Orleans Pelicans,31-41,21.0
-23,Sacramento Kings,31-41,20.0
-24,Toronto Raptors,27-45,2.0
-25,Minnesota Timberwolves,23-49,29.0
-26,Cleveland Cavaliers,22-50,28.0
-27,Oklahoma City Thunder,22-50,10.0
-28,Orlando Magic,21-51,18.0
-29,Detroit Pistons,20-52,27.0
-30,Houston Rockets,17-55,8.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Utah Jazz,52-20,11.0,10.0
+2,Phoenix Suns,51-21,17.0,15.0
+3,Philadelphia 76ers,49-23,13.0,10.0
+4,Brooklyn Nets,48-24,14.0,10.0
+5,Denver Nuggets,47-25,6.0,1.0
+6,Los Angeles Clippers,47-25,4.0,-2.0
+7,Milwaukee Bucks,46-26,1.0,-6.0
+8,Dallas Mavericks,42-30,12.0,4.0
+9,Los Angeles Lakers,42-30,3.0,-6.0
+10,Portland Trail Blazers,42-30,15.0,5.0
+11,Atlanta Hawks,41-31,26.0,15.0
+12,New York Knicks,41-31,25.0,13.0
+13,Miami Heat,40-32,9.0,-4.0
+14,Golden State Warriors,39-33,30.0,16.0
+15,Memphis Grizzlies,38-34,16.0,1.0
+16,Boston Celtics,36-36,5.0,-11.0
+17,Washington Wizards,34-38,22.0,5.0
+18,Indiana Pacers,34-38,7.0,-11.0
+19,Charlotte Hornets,33-39,23.0,4.0
+20,San Antonio Spurs,33-39,19.0,-1.0
+21,Chicago Bulls,31-41,24.0,3.0
+22,New Orleans Pelicans,31-41,21.0,-1.0
+23,Sacramento Kings,31-41,20.0,-3.0
+24,Toronto Raptors,27-45,2.0,-22.0
+25,Minnesota Timberwolves,23-49,29.0,4.0
+26,Cleveland Cavaliers,22-50,28.0,2.0
+27,Oklahoma City Thunder,22-50,10.0,-17.0
+28,Orlando Magic,21-51,18.0,-10.0
+29,Detroit Pistons,20-52,27.0,-2.0
+30,Houston Rockets,17-55,8.0,-22.0

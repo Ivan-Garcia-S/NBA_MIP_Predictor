@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Houston Rockets,65-17,3.0
-2,Toronto Raptors,59-23,7.0
-3,Golden State Warriors,58-24,1.0
-4,Boston Celtics,55-27,4.0
-5,Philadelphia 76ers,52-30,27.0
-6,Cleveland Cavaliers,50-32,5.0
-7,Portland Trail Blazers,49-33,16.0
-8,Indiana Pacers,48-34,13.0
-9,New Orleans Pelicans,48-34,21.0
-10,Oklahoma City Thunder,48-34,10.0
-11,Utah Jazz,48-34,8.0
-12,Minnesota Timberwolves,47-35,24.0
-13,San Antonio Spurs,47-35,2.0
-14,Denver Nuggets,46-36,18.0
-15,Miami Heat,44-38,17.0
-16,Milwaukee Bucks,44-38,14.0
-17,Washington Wizards,43-39,9.0
-18,Los Angeles Clippers,42-40,6.0
-19,Detroit Pistons,39-43,19.0
-20,Charlotte Hornets,36-46,20.0
-21,Los Angeles Lakers,35-47,28.0
-22,New York Knicks,29-53,25.0
-23,Brooklyn Nets,28-54,30.0
-24,Chicago Bulls,27-55,15.0
-25,Sacramento Kings,27-55,23.0
-26,Orlando Magic,25-57,26.0
-27,Atlanta Hawks,24-58,11.0
-28,Dallas Mavericks,24-58,22.0
-29,Memphis Grizzlies,22-60,12.0
-30,Phoenix Suns,21-61,29.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Houston Rockets,65-17,3.0,2.0
+2,Toronto Raptors,59-23,7.0,5.0
+3,Golden State Warriors,58-24,1.0,-2.0
+4,Boston Celtics,55-27,4.0,0.0
+5,Philadelphia 76ers,52-30,27.0,22.0
+6,Cleveland Cavaliers,50-32,5.0,-1.0
+7,Portland Trail Blazers,49-33,16.0,9.0
+8,Indiana Pacers,48-34,13.0,5.0
+9,New Orleans Pelicans,48-34,21.0,12.0
+10,Oklahoma City Thunder,48-34,10.0,0.0
+11,Utah Jazz,48-34,8.0,-3.0
+12,Minnesota Timberwolves,47-35,24.0,12.0
+13,San Antonio Spurs,47-35,2.0,-11.0
+14,Denver Nuggets,46-36,18.0,4.0
+15,Miami Heat,44-38,17.0,2.0
+16,Milwaukee Bucks,44-38,14.0,-2.0
+17,Washington Wizards,43-39,9.0,-8.0
+18,Los Angeles Clippers,42-40,6.0,-12.0
+19,Detroit Pistons,39-43,19.0,0.0
+20,Charlotte Hornets,36-46,20.0,0.0
+21,Los Angeles Lakers,35-47,28.0,7.0
+22,New York Knicks,29-53,25.0,3.0
+23,Brooklyn Nets,28-54,30.0,7.0
+24,Chicago Bulls,27-55,15.0,-9.0
+25,Sacramento Kings,27-55,23.0,-2.0
+26,Orlando Magic,25-57,26.0,0.0
+27,Atlanta Hawks,24-58,11.0,-16.0
+28,Dallas Mavericks,24-58,22.0,-6.0
+29,Memphis Grizzlies,22-60,12.0,-17.0
+30,Phoenix Suns,21-61,29.0,-1.0

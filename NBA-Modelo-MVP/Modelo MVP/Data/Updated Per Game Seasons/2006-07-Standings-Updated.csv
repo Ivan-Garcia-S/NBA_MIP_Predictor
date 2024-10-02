@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Dallas Mavericks,67-15,3.0
-2,Phoenix Suns,61-21,4.0
-3,San Antonio Spurs,58-24,2.0
-4,Detroit Pistons,53-29,1.0
-5,Houston Rockets,52-30,23.0
-6,Utah Jazz,51-31,16.0
-7,Cleveland Cavaliers,50-32,6.0
-8,Chicago Bulls,49-33,14.0
-9,Toronto Raptors,47-35,26.0
-10,Denver Nuggets,45-37,11.0
-11,Miami Heat,44-38,5.0
-12,Golden State Warriors,42-40,22.0
-13,Los Angeles Lakers,42-40,10.0
-14,New Jersey Nets,41-41,8.0
-15,Washington Wizards,41-41,13.0
-16,Orlando Magic,40-42,20.0
-17,Los Angeles Clippers,40-42,9.0
-18,New Orleans/Oklahoma City Hornets,39-43,18.0
-19,Indiana Pacers,35-47,15.0
-20,Philadelphia 76ers,35-47,19.0
-21,Charlotte Bobcats,33-49,28.0
-22,New York Knicks,33-49,29.0
-23,Sacramento Kings,33-49,12.0
-24,Minnesota Timberwolves,32-50,25.0
-25,Portland Trail Blazers,32-50,30.0
-26,Seattle SuperSonics,31-51,21.0
-27,Atlanta Hawks,30-52,27.0
-28,Milwaukee Bucks,28-54,17.0
-29,Boston Celtics,24-58,24.0
-30,Memphis Grizzlies,22-60,7.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Dallas Mavericks,67-15,3.0,2.0
+2,Phoenix Suns,61-21,4.0,2.0
+3,San Antonio Spurs,58-24,2.0,-1.0
+4,Detroit Pistons,53-29,1.0,-3.0
+5,Houston Rockets,52-30,23.0,18.0
+6,Utah Jazz,51-31,16.0,10.0
+7,Cleveland Cavaliers,50-32,6.0,-1.0
+8,Chicago Bulls,49-33,14.0,6.0
+9,Toronto Raptors,47-35,26.0,17.0
+10,Denver Nuggets,45-37,11.0,1.0
+11,Miami Heat,44-38,5.0,-6.0
+12,Golden State Warriors,42-40,22.0,10.0
+13,Los Angeles Lakers,42-40,10.0,-3.0
+14,New Jersey Nets,41-41,8.0,-6.0
+15,Washington Wizards,41-41,13.0,-2.0
+16,Orlando Magic,40-42,20.0,4.0
+17,Los Angeles Clippers,40-42,9.0,-8.0
+18,New Orleans/Oklahoma City Hornets,39-43,18.0,0.0
+19,Indiana Pacers,35-47,15.0,-4.0
+20,Philadelphia 76ers,35-47,19.0,-1.0
+21,Charlotte Bobcats,33-49,28.0,7.0
+22,New York Knicks,33-49,29.0,7.0
+23,Sacramento Kings,33-49,12.0,-11.0
+24,Minnesota Timberwolves,32-50,25.0,1.0
+25,Portland Trail Blazers,32-50,30.0,5.0
+26,Seattle SuperSonics,31-51,21.0,-5.0
+27,Atlanta Hawks,30-52,27.0,0.0
+28,Milwaukee Bucks,28-54,17.0,-11.0
+29,Boston Celtics,24-58,24.0,-5.0
+30,Memphis Grizzlies,22-60,7.0,-23.0

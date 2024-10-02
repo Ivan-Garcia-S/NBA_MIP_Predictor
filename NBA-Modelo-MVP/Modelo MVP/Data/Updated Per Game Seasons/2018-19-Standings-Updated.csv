@@ -1,31 +1,31 @@
-Seed,Team,Record,Previous Seed
-1,Milwaukee Bucks,60-22,16.0
-2,Toronto Raptors,58-24,2.0
-3,Golden State Warriors,57-25,3.0
-4,Denver Nuggets,54-28,14.0
-5,Houston Rockets,53-29,1.0
-6,Portland Trail Blazers,53-29,7.0
-7,Philadelphia 76ers,51-31,5.0
-8,Utah Jazz,50-32,11.0
-9,Boston Celtics,49-33,4.0
-10,Oklahoma City Thunder,49-33,10.0
-11,Indiana Pacers,48-34,8.0
-12,Los Angeles Clippers,48-34,18.0
-13,San Antonio Spurs,48-34,13.0
-14,Brooklyn Nets,42-40,23.0
-15,Orlando Magic,42-40,26.0
-16,Detroit Pistons,41-41,19.0
-17,Charlotte Hornets,39-43,20.0
-18,Miami Heat,39-43,15.0
-19,Sacramento Kings,39-43,25.0
-20,Los Angeles Lakers,37-45,21.0
-21,Minnesota Timberwolves,36-46,12.0
-22,Dallas Mavericks,33-49,28.0
-23,Memphis Grizzlies,33-49,29.0
-24,New Orleans Pelicans,33-49,9.0
-25,Washington Wizards,32-50,17.0
-26,Atlanta Hawks,29-53,27.0
-27,Chicago Bulls,22-60,24.0
-28,Cleveland Cavaliers,19-63,6.0
-29,Phoenix Suns,19-63,30.0
-30,New York Knicks,17-65,22.0
+Seed,Team,Record,Previous Seed,Seed Difference
+1,Milwaukee Bucks,60-22,16.0,15.0
+2,Toronto Raptors,58-24,2.0,0.0
+3,Golden State Warriors,57-25,3.0,0.0
+4,Denver Nuggets,54-28,14.0,10.0
+5,Houston Rockets,53-29,1.0,-4.0
+6,Portland Trail Blazers,53-29,7.0,1.0
+7,Philadelphia 76ers,51-31,5.0,-2.0
+8,Utah Jazz,50-32,11.0,3.0
+9,Boston Celtics,49-33,4.0,-5.0
+10,Oklahoma City Thunder,49-33,10.0,0.0
+11,Indiana Pacers,48-34,8.0,-3.0
+12,Los Angeles Clippers,48-34,18.0,6.0
+13,San Antonio Spurs,48-34,13.0,0.0
+14,Brooklyn Nets,42-40,23.0,9.0
+15,Orlando Magic,42-40,26.0,11.0
+16,Detroit Pistons,41-41,19.0,3.0
+17,Charlotte Hornets,39-43,20.0,3.0
+18,Miami Heat,39-43,15.0,-3.0
+19,Sacramento Kings,39-43,25.0,6.0
+20,Los Angeles Lakers,37-45,21.0,1.0
+21,Minnesota Timberwolves,36-46,12.0,-9.0
+22,Dallas Mavericks,33-49,28.0,6.0
+23,Memphis Grizzlies,33-49,29.0,6.0
+24,New Orleans Pelicans,33-49,9.0,-15.0
+25,Washington Wizards,32-50,17.0,-8.0
+26,Atlanta Hawks,29-53,27.0,1.0
+27,Chicago Bulls,22-60,24.0,-3.0
+28,Cleveland Cavaliers,19-63,6.0,-22.0
+29,Phoenix Suns,19-63,30.0,1.0
+30,New York Knicks,17-65,22.0,-8.0
