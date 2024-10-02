@@ -1,0 +1,31 @@
+Seed,Team,Record,Previous Seed
+1,Miami Heat,66-16,4.0
+2,Oklahoma City Thunder,60-22,3.0
+3,San Antonio Spurs,58-24,2.0
+4,Denver Nuggets,57-25,11.0
+5,Los Angeles Clippers,56-26,9.0
+6,Memphis Grizzlies,56-26,7.0
+7,New York Knicks,54-28,14.0
+8,Brooklyn Nets,49-33,
+9,Indiana Pacers,49-32,5.0
+10,Golden State Warriors,47-35,23.0
+11,Chicago Bulls,45-37,1.0
+12,Houston Rockets,45-37,17.0
+13,Los Angeles Lakers,45-37,6.0
+14,Atlanta Hawks,44-38,8.0
+15,Utah Jazz,43-39,15.0
+16,Boston Celtics,41-40,10.0
+17,Dallas Mavericks,41-41,13.0
+18,Milwaukee Bucks,38-44,19.0
+19,Philadelphia 76ers,34-48,16.0
+20,Toronto Raptors,34-48,24.0
+21,Portland Trail Blazers,33-49,20.0
+22,Minnesota Timberwolves,31-51,21.0
+23,Detroit Pistons,29-53,22.0
+24,Washington Wizards,29-53,29.0
+25,Sacramento Kings,28-54,26.0
+26,New Orleans Hornets,27-55,28.0
+27,Phoenix Suns,25-57,18.0
+28,Cleveland Cavaliers,24-58,27.0
+29,Charlotte Bobcats,21-61,30.0
+30,Orlando Magic,20-62,12.0

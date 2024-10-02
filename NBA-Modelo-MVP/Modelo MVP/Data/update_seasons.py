@@ -834,13 +834,62 @@ def remove_extra_letters_from_name():
         total_df['Player'] = total_df['Player'].str.replace(r'[\*\\].*', '', regex=True)
         total_df.to_csv(season + ' Total.csv', index=False)
 
+def add_previous_seed_col():
+     # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    
+    for season in seasons:
+        # Read the current season's data
+        current_standings = pd.read_csv(season + ' Standings.csv')
+        previous_standings = pd.read_csv(get_previous_season(season) + ' Standings.csv')
+
+        for index, row in current_standings.iterrows():
+            team = row['Team']
+            if team == 'New Orleans Hornets' and season == '2007-08':
+                team = 'New Orleans/Oklahoma City Hornets'
+            elif team == 'Oklahoma City Thunder' and season == '2008-09':
+                team = 'Seattle SuperSonics'
+            elif team == 'Brooklyn Nets' and season == '2012-13':
+                team = 'New Jersey Nets'
+            elif team == 'New Orleans Pelicans' and season == '2013-14':
+                team = 'New Orleans Hornets'
+            elif team == 'Charlotte Hornets' and season == '2014-15':
+                team = 'Charlotte Bobcats'
+            current_standings.loc[current_standings['Team'] == team, 'Previous Seed'] =  previous_standings.loc[previous_standings['Team'] == team]["Seed"].values[0]
+            
+            #print(team + " in " + season+ " PREV SEED = " + str(previous_standings.loc[previous_standings['Team'] == team]["Seed"].values[0]))
+        current_standings.to_csv(f'Updated Per Game Seasons/{season}-Standings-Updated.csv', index=False) 
+
+def add_difference_seed_col():
+     # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+
+    for season in seasons:
+        # Read the current season's data
+        current_standings = pd.read_csv(f'Updated Per Game Seasons/{season}-Standings-Updated.csv')
+
+        for index, row in current_standings.iterrows():
+            curr_seed = row['Seed']
+            prev_seed = row['Previous Seed']
+            row['Seed Difference'] =  prev_seed - curr_seed # backwards bc if they go down in seed the team got better
+            
+            #print(team + " in " + season+ " PREV SEED = " + str(previous_standings.loc[previous_standings['Team'] == team]["Seed"].values[0]))
+        current_standings.to_csv(f'Updated Per Game Seasons/{season}-Standings-Updated.csv', index=False) 
+
+
+
 if __name__ == "__main__":
     
 
     #add_won_already_column()
     #add_previous_season_values()
     #add_best_season_col()
-    add_best_season_values()
+    add_previous_seed_col()
+    #add_best_season_values()
     #add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
