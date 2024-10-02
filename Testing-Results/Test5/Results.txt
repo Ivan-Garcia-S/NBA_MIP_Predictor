@@ -1,0 +1,3 @@
+1. Using the SHAP summary plot, it appeared as though only a very small set of training variables had impact on the MIP final score. I think using the values for the differences was a better idea and will go back to that.
+
+2. I want to add differences between stats from the current and best season this time.

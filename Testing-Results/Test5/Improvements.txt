@@ -1,0 +1,1 @@
+I added the actual pergame and advanced stats from the players "previous" season and "best" season, rather than the difference between the previous season and the current one.
