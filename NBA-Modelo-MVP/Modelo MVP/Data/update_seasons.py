@@ -567,6 +567,66 @@ def add_previous_season_col():
         current_season_advanced_df.to_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv', index=False)
 
 
+def add_best_season_col():
+     # List of seasons from the earliest to the latest
+    seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
+              '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'
+       ]
+    
+    for season in seasons:
+        # Read the current season's data
+        current_season_df = pd.read_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv')
+        current_season_advanced_df = pd.read_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv')
+
+        # For each player, find their previous valid season (over 35 games played)
+        for index, row in current_season_df.iterrows():
+            player = row['Player']
+            best_season = "None"
+            prev_seasons_checked = 0
+            best_ppg = 0
+
+            # If the player hasn't previously played at least one season, set None
+            if row['Seasons Played'] == 0:
+                current_season_df.at[index, 'Best Season'] = "None"
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'Best Season'] = "None"
+            else:
+                previous_season = get_previous_season(season)
+                previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+                prev_seasons_checked += 1
+                
+                try:
+                    g_prev = previous_season_df.loc[previous_season_df['Player'] == player, 'G'].values[0]
+                    if g_prev >= 35:
+                        ppg = previous_season_df.loc[previous_season_df['Player'] == player, 'PTS'].values[0]
+                        if ppg > best_ppg:
+                            best_ppg = ppg
+                            best_season = previous_season
+                except:
+                    #print(player + " did not play in " + previous_season)
+                    g_prev = 0
+                # Wait to find the previous valid season
+                while prev_seasons_checked <= 8 and previous_season != "2001-02":
+                    previous_season = get_previous_season(previous_season)
+                    previous_season_df = pd.read_csv(f'Updated Per Game Seasons/{previous_season}-PerGame-Updated.csv')
+                    try:
+                        g_prev = previous_season_df.loc[previous_season_df['Player'] == player, 'G'].values[0]
+                        if g_prev >= 35:
+                            ppg = previous_season_df.loc[previous_season_df['Player'] == player, 'PTS'].values[0]
+                        if ppg > best_ppg:
+                            best_ppg = ppg
+                            best_season = previous_season
+                    except:
+                       #print(player + " did not play in " + previous_season)
+                        g_prev = 0
+
+                # Once we've found the right season, add it to Pergame and Advanced data
+                current_season_df.at[index, 'Best Season'] = best_season
+                current_season_advanced_df.loc[current_season_advanced_df['Player'] == player, 'Best Season'] = best_season
+                
+        current_season_df.to_csv(f'Updated Per Game Seasons/{season}-PerGame-Updated.csv', index=False)
+        current_season_advanced_df.to_csv(f'Updated Per Game Seasons/{season}-Advanced-Updated.csv', index=False)
+
 def add_previous_season_values():
      # List of seasons from the earliest to the latest
     seasons = ['2006-07', '2007-08', '2008-09', '2009-10',
@@ -715,7 +775,8 @@ if __name__ == "__main__":
     
 
     #add_won_already_column()
-    add_previous_season_values()
+    #add_previous_season_values()
+    add_best_season_col()
     #add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values
     #df = fill_missing_seasons(df, 'Season')
