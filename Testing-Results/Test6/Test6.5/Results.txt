@@ -1,0 +1,4 @@
+1. The results are still not as high as I hoped.
+
+2. Some of the most impactful variables are: PTS_diff_BS, PTS_diff, FGA_diff, OBPM_diff, WS_Advanced, TOV_diff, BPM_Advanced, MP_Pergame
+3. I'm trying to understand why some variables like Seed Difference and Seasons Played seem to have very little effect on the output, contrary to my intuition.
