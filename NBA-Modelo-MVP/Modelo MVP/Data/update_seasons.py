@@ -881,6 +881,62 @@ def add_difference_seed_col():
         current_standings.to_csv(f'Updated Per Game Seasons/{season}-Standings-Updated.csv', index=False) 
 
 
+def add_season_col():
+    season = '2024-25'
+
+    mvps = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/MVPs.csv')
+    for i, row in mvps.iterrows():
+        if row['Rank'] == '1':
+            season = get_previous_season(season)
+        mvps.loc[i, 'Season'] = season
+
+    mvps.to_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/MVPs.csv', index=False)
+
+def test_drop_dupes():
+
+    pergame= pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/2023-24-Pergame.csv')
+    # Sort by Player and set 'TOT' as priority for Team
+    pergame = pergame.sort_values(by=['Player', 'Team'], key=lambda x: x == 'TOT', ascending=False)
+
+    # Drop duplicates based on Player, keeping the first occurrence ('TOT' prioritized)
+    pergame = pergame.drop_duplicates(subset='Player', keep='first')
+
+    pergame.to_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/test.csv', index=False)
+
+
+# Confirmed no MVP candidate was traded that same year
+def check_mvp_candidate_traded():
+    season = '2023-24'
+    season_df =  pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/2023-24-Pergame.csv')
+
+    mvps = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/MVPs.csv')
+    for i, row in mvps.iterrows():
+        player_name = row['Player']
+
+        if season != row['Season']:
+            season = row['Season']
+            season_df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/{season}-Pergame.csv')
+        player_rows = season_df.loc[(season_df['Player'] == player_name)&(season_df['Team'] == 'TOT')]
+        if len(player_rows) > 0:
+            print("MVP CANDIDATE " + player_name + " was on two teams.")
+
+
+
+def rename_MPG_col():
+    seasons = ['2004-05','2005-06','2006-07', '2007-08', '2008-09', '2009-10',
+               '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
+               '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    for season in seasons:
+        df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/{season}-Pergame.csv')
+
+        print("Original columns:", df.columns)
+
+        # Remove the second 'MP' column
+        # Here we keep the first 'MP' by slicing the DataFrame
+        df = df.drop(df.columns[[4,5]], axis=1)
+
+        df.rename(columns={'MP.1': 'MPG'}, inplace=True)
+        df.to_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/{season}-Pergame.csv', index=False)
 
 if __name__ == "__main__":
     
@@ -888,7 +944,9 @@ if __name__ == "__main__":
     #add_won_already_column()
     #add_previous_season_values()
     #add_best_season_col()
-    add_difference_seed_col()
+   # check_mvp_candidate_traded()
+    rename_MPG_col()
+    #test_drop_dupes()
     #add_best_season_values()
     #add_previous_season_col()
     # Update the "Season" column by filling missing or invalid values
