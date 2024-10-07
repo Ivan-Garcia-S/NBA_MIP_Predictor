@@ -1,0 +1,10 @@
+1. Now that PCT and Seed are successfully entered into the data, they are found to have been two of the most impactful variables when it comes to determining MVP, similar to what was found out for the 
+NBA MVP results.
+
+2. I also noticed the data I have only contains the 'Age' of the players who recieved MVP votes and those that didn't have a default age set of 0. I will either remove 'Age' from 
+the feature variables or get the Age data for the rest of the players.
+
+3. Another observation is that I have some feature variables pretty much being used twice, such as fg%, 2pfg%, 3pfg%, ft%, 
+
+4. I have the total minutes played in the season as a feature variable but i might want to remove it bc not all seasons had the same number of games played in them, making a wide variety of 
+total minutes played.
