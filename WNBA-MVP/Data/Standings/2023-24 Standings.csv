@@ -1,31 +1,13 @@
-Seed,Team,Record
-1,Boston Celtics,64-18
-2,Denver Nuggets,57-25
-3,Oklahoma City Thunder,57-25
-4,Minnesota Timberwolves,56-26
-5,Los Angeles Clippers,51-31
-6,Dallas Mavericks,50-32
-7,New York Knicks,50-32
-8,Milwaukee Bucks,49-33
-9,New Orleans Pelicans,49-33
-10,Phoenix Suns,49-33
-11,Cleveland Cavaliers,48-34
-12,Indiana Pacers,47-35
-13,Los Angeles Lakers,47-35
-14,Orlando Magic,47-35
-15,Philadelphia 76ers,47-35
-16,Miami Heat,46-36
-17,Golden State Warriors,46-36
-18,Sacramento Kings,46-36
-19,Houston Rockets,41-41
-20,Chicago Bulls,39-43
-21,Atlanta Hawks,36-46
-22,Brooklyn Nets,32-50
-23,Utah Jazz,31-51
-24,Memphis Grizzlies,27-55
-25,Toronto Raptors,25-57
-26,San Antonio Spurs,22-60
-27,Charlotte Hornets,21-61
-28,Portland Trail Blazers,21-61
-29,Washington Wizards,15-67
-30,Detroit Pistons,14-68
+Rk,Team,Overall
+3,Connecticut Sun,28-12
+10,Chicago Sky,13-27
+4,Las Vegas Aces,27-13
+11,Dallas Wings,9-31
+12,Los Angeles Sparks,8-32
+2,Minnesota Lynx,30-10
+8,Atlanta Dream,15-25
+1,New York Liberty,32-8
+5,Seattle Storm,25-15
+7,Phoenix Mercury,19-21
+9,Washington Mystics,14-26
+6,Indiana Fever,20-20

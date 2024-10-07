@@ -923,20 +923,65 @@ def check_mvp_candidate_traded():
 
 
 def rename_MPG_col():
-    seasons = ['2004-05','2005-06','2006-07', '2007-08', '2008-09', '2009-10',
+    seasons = ['2003-04','2004-05','2005-06','2006-07', '2007-08', '2008-09', '2009-10',
                '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19',
                '2019-20', '2020-21', '2021-22', '2022-23', '2023-24']
+    #seasons = ['2003-04']
     for season in seasons:
-        df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/{season}-Pergame.csv')
+        df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Total-Stats/{season}-Totals.csv')
 
         print("Original columns:", df.columns)
 
         # Remove the second 'MP' column
         # Here we keep the first 'MP' by slicing the DataFrame
-        df = df.drop(df.columns[[4,5]], axis=1)
+        df = df.drop(df.columns[[5,7]], axis=1)
 
         df.rename(columns={'MP.1': 'MPG'}, inplace=True)
-        df.to_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Pergame-Stats/{season}-Pergame.csv', index=False)
+        df.to_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Total-Stats/{season}-Totals.csv', index=False)
+
+def find_lowest_x(top_n_candidates, col_name):
+    lowest = 100000
+    lowest_player = None
+    lowest_season = None
+    rank_num = 1
+    seasons = ['2023-24','2022-23','2021-22','2020-21','2019-20','2018-19','2017-18','2016-17','2015-16','2014-15','2013-14',
+          '2012-13','2011-12','2010-11','2009-10','2008-09','2007-08','2006-07','2005-06', '2004-05', '2003-04',
+    ]
+
+    df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/MVPs.csv')
+    df['MVP Rank'] = df['MVP Rank'].str.replace('T', '').astype(int)
+
+    with open(f'lowest_{col_name}_by_top_'+ str(top_n_candidates) +'_candidates_report.txt', 'w') as file:
+        
+        for season in seasons:
+            # Filter the DataFrame based on the condition
+            filtered_players = df[(df['MVP Rank'] <= top_n_candidates) & (df['Season'] == season)]
+            # Extract the list of player names
+            candidate_names = filtered_players['Player'].tolist()
+            
+            season_df = pd.read_csv(f'/Users/von/Desktop/Work/Projects/NBA_MIP_Predictor/WNBA-MVP/Data/Advanced-Stats/{season}-Advanced.csv')
+            
+            for candidate in candidate_names:
+                per_values = season_df.loc[season_df['Player'].str.contains(candidate, case=False, na=False), col_name].values
+               
+                try:
+                    val = per_values[0]
+
+                except:
+                    file.write(f"{candidate} has no recorded {col_name}\n")
+                
+                else:
+                    if val < lowest:
+                        lowest_player = candidate
+                        lowest_season = season
+                    lowest = min(val, lowest)
+                   
+                    file.write(f"{candidate} has {col_name} of {val} in {season}, rank is {rank_num}\n\n")
+        
+        # Write the final results
+        file.write("Since 2003-04 season,\n")
+        file.write(f"Lowest {col_name} is {lowest}, by {lowest_player} in {lowest_season}\n")
+
 
 if __name__ == "__main__":
     
@@ -945,7 +990,8 @@ if __name__ == "__main__":
     #add_previous_season_values()
     #add_best_season_col()
    # check_mvp_candidate_traded()
-    rename_MPG_col()
+    #rename_MPG_col()
+    find_lowest_x(3, "PER")
     #test_drop_dupes()
     #add_best_season_values()
     #add_previous_season_col()
