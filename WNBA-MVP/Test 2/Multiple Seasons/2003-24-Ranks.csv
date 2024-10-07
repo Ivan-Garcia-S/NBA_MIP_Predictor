@@ -1,0 +1,22 @@
+MVP Rank Real,MVP Share Real,MVP Rank SVM,MVP Share SVM,MVP Rank XGBoost,MVP Share XGBoost,MVP Rank Random Forest,MVP Share Random Forest,MVP Rank AdaBoost,MVP Share AdaBoost,MVP Rank Gradient Boosting,MVP Share Gradient Boosting,Season
+Lisa Leslie,0.885,Lauren Jackson,0.759,Lauren Jackson,0.618,Lauren Jackson,0.599,Lauren Jackson,0.704,Lauren Jackson,0.611,2003-04
+Sheryl Swoopes,0.654,Lauren Jackson,0.536,Lauren Jackson,0.427,Lauren Jackson,0.448,Sheryl Swoopes,0.527,Sheryl Swoopes,0.454,2004-05
+Lisa Leslie,0.924,Lauren Jackson,0.667,Lauren Jackson,0.592,Lisa Leslie,0.588,Lauren Jackson,0.692,Lauren Jackson,0.679,2005-06
+Lauren Jackson,0.985,Lauren Jackson,0.99,Lauren Jackson,0.734,Lauren Jackson,0.849,Lauren Jackson,0.815,Lauren Jackson,0.841,2006-07
+Candace Parker,0.923,Candace Parker,0.768,Diana Taurasi,0.587,Candace Parker,0.616,Diana Taurasi,0.677,Diana Taurasi,0.632,2007-08
+Diana Taurasi,0.828,Lauren Jackson,0.322,Lauren Jackson,0.289,Lauren Jackson,0.336,Tamika Catchings,0.261,Lauren Jackson,0.343,2008-09
+Lauren Jackson,0.873,Lauren Jackson,0.709,Lauren Jackson,0.631,Lauren Jackson,0.6,Lauren Jackson,0.594,Lauren Jackson,0.748,2009-10
+Tamika Catchings,0.749,Sylvia Fowles,0.437,Sylvia Fowles,0.644,Sylvia Fowles,0.707,Sylvia Fowles,0.811,Sylvia Fowles,0.648,2010-11
+Tina Charles,0.885,Candace Parker,0.564,Tamika Catchings,0.435,Candace Parker,0.396,Tamika Catchings,0.46,Tamika Catchings,0.435,2011-12
+Candace Parker,0.669,Candace Parker,0.65,Candace Parker,0.626,Candace Parker,0.566,Candace Parker,0.691,Candace Parker,0.657,2012-13
+Maya Moore,0.976,Maya Moore,0.678,Maya Moore,0.602,Maya Moore,0.547,Maya Moore,0.528,Maya Moore,0.608,2013-14
+Elena Delle Donne,0.987,Elena Delle Donne,0.75,Elena Delle Donne,0.723,Elena Delle Donne,0.6,Elena Delle Donne,0.832,Elena Delle Donne,0.811,2014-15
+Nneka Ogwumike,0.928,Maya Moore,0.466,Nneka Ogwumike,0.525,Nneka Ogwumike,0.523,Nneka Ogwumike,0.69,Nneka Ogwumike,0.618,2015-16
+Sylvia Fowles,0.962,Nneka Ogwumike,0.522,Nneka Ogwumike,0.64,Sylvia Fowles,0.493,Sylvia Fowles,0.55,Nneka Ogwumike,0.785,2016-17
+Breanna Stewart,0.954,Breanna Stewart,0.712,Breanna Stewart,0.649,Liz Cambage,0.591,Breanna Stewart,0.77,Breanna Stewart,0.68,2017-18
+Elena Delle Donne,0.977,Elena Delle Donne,0.552,Elena Delle Donne,0.573,Elena Delle Donne,0.499,Elena Delle Donne,0.751,Elena Delle Donne,0.651,2018-19
+A'ja Wilson,0.974,Breanna Stewart,0.267,A'ja Wilson,0.192,A'ja Wilson,0.234,Breanna Stewart,0.166,A'ja Wilson,0.184,2019-20
+Jonquel Jones,0.994,Jonquel Jones,0.562,Brittney Griner,0.574,Brittney Griner,0.508,Brittney Griner,0.736,Brittney Griner,0.613,2020-21
+A'ja Wilson,0.854,Breanna Stewart,0.669,A'ja Wilson,0.587,A'ja Wilson,0.576,A'ja Wilson,0.662,A'ja Wilson,0.539,2021-22
+Breanna Stewart,0.743,A'ja Wilson,0.866,A'ja Wilson,0.764,A'ja Wilson,0.885,A'ja Wilson,0.821,A'ja Wilson,0.929,2022-23
+A'ja Wilson,1.0,Breanna Stewart,0.757,Breanna Stewart,0.697,Breanna Stewart,0.686,A'ja Wilson,0.824,A'ja Wilson,0.777,2023-24

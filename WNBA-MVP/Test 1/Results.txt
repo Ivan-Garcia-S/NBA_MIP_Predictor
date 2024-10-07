@@ -1,2 +1,4 @@
 1. I realized that unlike the NBA season which has had a standard of 82 games a year for the past however many years, the WNBA has had quite a few changes to the total games played in the
 past 20 years.  I will account for that in my next test by replacing the total games played/started by a percentage of the total games played/started, to better account for these two stats.
+
+2. I accidentally left in a restriction on the MVP candidates that they must be less than 30 years of age. I removed this restriction for Test 2.
