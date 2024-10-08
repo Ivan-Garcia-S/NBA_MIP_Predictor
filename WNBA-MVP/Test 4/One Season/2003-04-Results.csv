@@ -1,0 +1,6 @@
+Model,RMSE,R²
+SVM,0.13,0.706
+XGBoost,0.141,0.654
+Random Forest,0.146,0.631
+AdaBoost,0.18,0.436
+Gradient Boosting,0.14,0.662
