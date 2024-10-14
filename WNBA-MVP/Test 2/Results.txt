@@ -1,3 +1,0 @@
-1. The biggest thing I noticed right away was that the Seed and PCT feature variables were getting input as 0 for every single player. This is obviously why the shap summary indicated them to have to impact 
-on the MVP winner and I will fix this for test 3.
-

@@ -1,7 +1,0 @@
-Variables in common from the top 10 most important according to shap summary plot in NBA and WNBA MVP predictions:
-
-1. Seed
-2. PER
-3. WS/40 | WS/48
-4. PCT (Percentage of games won by player's team)
-5. FG per game

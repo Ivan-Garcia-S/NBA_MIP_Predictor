@@ -1,4 +1,0 @@
-1. The results of this test were very good, with some models reaching the level of accuracy of the original NBA MVP model.  And my model has the same accuracy over a longer period of time!
-(21 seasons compared to 16)
-
-2. For the next iteration, I have manually added in the data that Lauren Jackson won MVP in 2002-03, which was necessary because my data only goes back to 2004.

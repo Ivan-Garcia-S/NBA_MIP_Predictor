@@ -1,3 +1,0 @@
-1. In test 4, 2 of the models predicted 15/21 seasons of mvps correctly. I thought adding in data for Lauren Jackson as the MVP in 2003 would improve at least one model to 16, but Test 5 actually only had one
-model that predicted 15 correct.  I also reversed the list of seasons in the beginning, so I will revert this and see if there's any effect on the predictions.
-
