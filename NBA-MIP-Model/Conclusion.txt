@@ -30,7 +30,8 @@ moving from the 11 seed to the 9 seed in the West.
 and individual performance from that same year, whereas with MIP awards it can be a combination of any number of past seasons of team and individual difference in performance.  This large increase
 in variability makes it extremely tough to train a model that can predict the MIP winner over the course of many seasons.
 
-    (Speak on all the feature variables I tried to include in model)
+    Here's how I tried to account for improvement between current and past season(s). 
+    
 
     
 
