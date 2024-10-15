@@ -33,7 +33,7 @@ Predicting the MIP award is significantly harder than predicting other awards, s
 - **Feature Engineering:** Improve feature selection by focusing on players' full career arcs, team dynamics, and narrative-driven factors.
 
 ## Inspiration
-- This project was inspired by an NBA MVP prediction model initially developed by Gabriel Pastorello here: https://towardsdatascience.com/predicting-the-nba-mvp-with-machine-learning-c3e5b755f42e. His work on using machine learning to predict NBA MVP winners was pivotal in shaping the approach and methodology used in this WNBA MVP model.
+- This project was inspired by an NBA MVP prediction model initially developed by Gabriel Pastorello here: https://towardsdatascience.com/predicting-the-nba-mvp-with-machine-learning-c3e5b755f42e. His work on using machine learning to predict NBA MVP winners was pivotal in shaping the approach and methodology used in this NBA MIP model.
 
 ---
 
