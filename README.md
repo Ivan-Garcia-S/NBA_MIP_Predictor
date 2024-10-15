@@ -8,7 +8,7 @@ This project aimed to predict the winner of the NBA’s **Most Improved Player (
 The primary challenge was finding strong correlations between the feature variables (e.g., player and team statistics) and the MIP share. Unlike other awards, the MIP selection process appears more subjective and context-driven, making it harder for models to generalize across different years.
 
 ### Ambiguity in Award Criteria
-The MIP award is defined as honoring an "up-and-coming player who has made a dramatic improvement from the previous season or seasons." This creates ambiguity in how voters interpret "improvement" and how much weight they place on a player's **entire career** versus their **most recent season**. Both need to be considered in the model, which complicates the feature selection and prediction process.
+The MIP award is defined as honoring an "up-and-coming player who has made a dramatic improvement from the previous season or seasons." [(NBA's MIP Award description)](https://pr.nba.com/ja-morant-2021-22-kia-nba-most-improved-player-award/).This creates ambiguity in how voters interpret "improvement" and how much weight they place on a player's **entire career** versus their **most recent season**. Both need to be considered in the model, which complicates the feature selection and prediction process.
 
 #### Examples:
 - **Channing Frye (2009-10):** Despite improving his averages, his prior strong rookie season may have diminished his MIP candidacy.
