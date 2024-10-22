@@ -30,11 +30,11 @@ Predicting the MIP award is significantly harder than predicting other awards, s
 
 ### Future Directions
 - **Exploration of Voter Patterns:** Analyze voting trends to better understand how voters weigh career performance versus recent seasons.
-- **Feature Engineering:** Improve feature selection by focusing on players' full career arcs, team dynamics, and narrative-driven factors.
+- **Feature Engineering:** Improve feature selection by focusing on players' full career arcs, a more complex measure of 'improved performance', and narrative-driven factors.
 
 ## Inspiration
 - This project was inspired by an NBA MVP prediction model initially developed by Gabriel Pastorello here: https://towardsdatascience.com/predicting-the-nba-mvp-with-machine-learning-c3e5b755f42e. His work on using machine learning to predict NBA MVP winners was pivotal in shaping the methodology used in this NBA MIP model.
 
 ---
 
-This project provided valuable insights into the complexities of predicting subjective awards and highlighted areas for future improvement in both modeling and understanding of the award process.
+This project provided valuable insights into the complexities of predicting a subjective award like the MIP and highlighted areas for future improvement in both modeling and understanding of the award process.
